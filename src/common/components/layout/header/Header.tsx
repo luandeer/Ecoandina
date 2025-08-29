@@ -9,16 +9,16 @@ const Header = () => {
 	return (
 		<header className="bg-thedooragency-negro sticky top-0 z-40 w-full overflow-hidden  border-white/30 bg-white">
 			<div className="w-full  flex items-center justify-end ">
-				<div className="flex items-center justify-start pl-10 bg-ecoandina-rojo max-w-[700px] py-1.5 text-white text-xs w-full clip-diagonal -mr-1">
-					<div className="flex items-center gap-1">
+				<div className="flex items-center justify-start gap-4 pl-10 bg-ecoandina-rojo max-w-[700px] py-1.5 text-white text-xs w-full clip-diagonal -mr-1">
+					<div className="flex items-center gap-1.5">
 						<Phone className="w-3 h-3" />
 						<span>TELÉFONO: 123-456-7890</span>
 					</div>
-					<div className="flex items-center gap-1">
+					<div className="flex items-center gap-1.5">
 						<Mail className="w-3 h-3" />
 						<span>CORREO: info@ecoaudina.com</span>
 					</div>
-					<div className="flex items-center gap-1">
+					<div className="flex items-center gap-1.5">
 						<MapPin className="w-3 h-3" />
 						<span>UBICACIÓN: Ciudad, País</span>
 					</div>

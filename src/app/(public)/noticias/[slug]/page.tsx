@@ -1,6 +1,3 @@
-import { notFound } from 'next/navigation';
-
-import type { Metadata } from 'next';
 import NoticeView from '@/modules/notices/NoticeView';
 
 type PageProps = {
@@ -30,7 +27,7 @@ export default async function page({ params }: PageProps) {
 	// await new Promise((resolve) => setTimeout(resolve, 2000));
 
 	const { slug } = await params;
-
+	console.log(slug);
 	// if (!VALID_SLUGS.includes(slug)) {
 	//   notFound(); // 404 si no existe la categoría
 	// }
