@@ -85,7 +85,7 @@ const BannerCarouselHome: React.FC<PropType> = (props) => {
 						para concreto, Morteros y Shotcrete.
 					</span>
 					<Link
-						href="#"
+						href="/productos"
 						className="w-fit flex items-center text-white gap-2 bg-ecoandina-rojo px-8 py-1.5 rounded-[2px] border border-white/60  text-sm uppercase mt-4"
 					>
 						Ver productos
