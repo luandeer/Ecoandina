@@ -25,7 +25,7 @@ const Values = () => {
 	];
 	return (
 		<Container className="px-0 py-0" size="xl">
-			<section className="py-16 px-4 max-w-6xl mx-auto">
+			<section className=" px-4 max-w-6xl mx-auto">
 				<div className="text-center mb-24">
 					<h2 className="text-3xl font-bold text-foreground mb-4">
 						Nuestros valores
