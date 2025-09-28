@@ -2,6 +2,7 @@ import { Facebook, Instagram, Twitter } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '@public/logo.webp';
+import { socialLinks } from '@/modules/contact/data/redes';
 
 export default function Footer() {
 	return (
@@ -9,38 +10,38 @@ export default function Footer() {
 			<div className="max-w-[1440px] mx-auto">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 					{/* Primera columna */}
-					<div className="flex items-start gap-20  text-sm">
+					<div className="flex items-start gap-10 lg:gap-20 justify-center   text-sm">
 						<div className="space-y-4">
-							<ul className="space-y-3">
+							<ul className="space-y-3 text-center md:text-start">
 								<li>
-									<a
-										href="#"
+									<Link
+										href="/"
 										className="text-gray-300 hover:text-white transition-colors"
 									>
 										Inicio
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a
-										href="#"
+									<Link
+										href="/nosotros"
 										className="text-gray-300 hover:text-white transition-colors"
 									>
 										Nosotros
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a
-										href="#"
+									<Link
+										href="/productos"
 										className="text-gray-300 hover:text-white transition-colors"
 									>
 										Productos
-									</a>
+									</Link>
 								</li>
 							</ul>
 						</div>
 
 						{/* Segunda columna */}
-						<div className="space-y-4">
+						<div className="space-y-4 hidden md:block">
 							<ul className="space-y-3">
 								<li>
 									<a
@@ -62,7 +63,7 @@ export default function Footer() {
 						</div>
 
 						{/* Tercera columna */}
-						<div className="space-y-4">
+						<div className="space-y-4 hidden md:block">
 							<ul className="space-y-3">
 								<li>
 									<a
@@ -93,7 +94,7 @@ export default function Footer() {
 					</div>
 
 					{/* Cuarta columna - Logo y redes sociales */}
-					<div className="gap-2 w-full flex flex-col items-center justify-center">
+					<div className="gap-4 w-full flex flex-col items-center justify-center">
 						<Link href="/" className="max-w-[100px] w-full h-min pb-2">
 							<Image
 								src={logo}
@@ -101,25 +102,22 @@ export default function Footer() {
 								className=" object-cover will-change-transform"
 							/>
 						</Link>{' '}
-						<div className="flex space-x-4">
-							<a
-								href="#"
-								className="text-gray-300 hover:text-white transition-colors"
-							>
-								<Instagram size={20} />
-							</a>
-							<a
-								href="#"
-								className="text-gray-300 hover:text-white transition-colors"
-							>
-								<Facebook size={20} />
-							</a>
-							<a
-								href="#"
-								className="text-gray-300 hover:text-white transition-colors"
-							>
-								<Twitter size={20} />
-							</a>
+						<div className="flex items-center gap-3">
+							{socialLinks.map((social, index) => (
+								<a
+									key={index}
+									href={social.url}
+									className="flex items-center"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<Image
+										src={social.icon}
+										alt={social.name}
+										className="h-[24px] w-[24px] object-contain transition-opacity hover:opacity-80"
+									/>
+								</a>
+							))}
 						</div>
 					</div>
 				</div>

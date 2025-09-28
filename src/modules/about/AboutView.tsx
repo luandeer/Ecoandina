@@ -3,7 +3,9 @@ import { Container } from '@/common/components/customize/Container';
 import React from 'react';
 import foto from '@public/about/portada-about.png';
 import Image from 'next/image';
-import about from '@public/about/about.png';
+import n2 from '@public/about/n2.webp';
+import n1 from '@public/about/n1.webp';
+
 import eyes from '@public/about/eyes-about.png';
 import arrow from '@public/about/arrow-icon-about.png';
 export const AboutView = () => {
@@ -27,7 +29,7 @@ export const AboutView = () => {
 			</Container>
 			<Container className="pt-4 space-y-20">
 				<div className="w-full max-w-[1200px] mx-auto">
-					<div className="grid grid-cols-[0.8fr_1.2fr] gap-10  items-center">
+					<div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-10  items-center">
 						<div className="space-y-8 max-w-[600px]">
 							<div className="space-y-6">
 								<Image
@@ -51,7 +53,7 @@ export const AboutView = () => {
 						</div>
 						<div className="relative  ml-auto mt-8">
 							<Image
-								src={about}
+								src={n1}
 								alt="asdsd"
 								className="w-full h-full object-cover pb-4 pl-4 relative z-10 -mt-8 rounded-md"
 							/>
@@ -60,16 +62,16 @@ export const AboutView = () => {
 					</div>
 				</div>
 				<div className="w-full max-w-[1200px] mx-auto ">
-					<div className="grid grid-cols-[1.2fr_0.8fr] gap-10 items-center">
-						<div className="relative  mr-auto mt-8">
+					<div className="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
+						<div className="relative  mr-auto mt-8 order-2 md:order-1">
 							<Image
-								src={about}
+								src={n2}
 								alt="asdsd"
-								className="w-full h-full object-cover pb-4 pl-4 relative z-10 -mt-8 rounded-md"
+								className="w-full h-full object-cover pb-4 pl-4 relative z-10 -mt-8 rounded-md "
 							/>
 							<div className="absolute inset-0 bg-ecoandina-rojo z-0 rounded-md mr-8"></div>
 						</div>
-						<div className="space-y-8 max-w-[600px]">
+						<div className="space-y-8 max-w-[600px] order-1 md:order-2">
 							<div className="space-y-6">
 								<Image
 									src={eyes}

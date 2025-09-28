@@ -5,8 +5,8 @@ import check from '@public/check-icon.webp';
 const About = () => {
 	return (
 		<div className="w-full">
-			<div className="flex items-start">
-				<div className="space-y-8 max-w-[600px]">
+			<div className="flex lg:flex-row flex-col gap-10 items-start">
+				<div className="space-y-8 max-w-full lg:max-w-[500px] xl:max-w-[600px]">
 					<div className="space-y-2">
 						<h3 className="text-ecoandina-rojo font-bold">NUESTRA EMPRESA</h3>
 						<div className="space-y-2">
@@ -40,7 +40,7 @@ const About = () => {
 						</li>
 					</ul>
 				</div>
-				<div className="relative  ml-auto mt-8">
+				<div className="relative  lg:ml-auto mt-8">
 					<Image
 						src={about}
 						alt="asdsd"

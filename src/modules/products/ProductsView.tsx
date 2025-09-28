@@ -23,7 +23,7 @@ const ProductsView = () => {
 				</p>
 				<div className="w-16 h-[5px] bg-ecoandina-rojo rounded-full mx-auto"></div>
 			</Container>
-			<Container className="pt-0 grid grid-cols-3 gap-6 max-w-[1000px]">
+			<Container className="pt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1000px]">
 				<PreviewProduct
 					image={productImage}
 					title="Reductor de Agua Plastificantes"

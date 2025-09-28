@@ -77,22 +77,24 @@ const BannerCarouselHome: React.FC<PropType> = (props) => {
 			</div>
 			<div className="inset-0  w-full h-full absolute max-w-[1440px] px-6 xl:px-0 mx-auto">
 				<div className="absolute top-[20%] max-w-[450px] space-y-2.5">
-					<h3 className="text-white text-lg font-bold">CONSTRUYAMOS JUNTOS</h3>
-					<h4 className="text-white font-black text-4xl text-balance xl:text-5xl">
+					<h3 className="text-white text-lg font-bold  text-center min-[500px]:text-start">
+						CONSTRUYAMOS JUNTOS
+					</h3>
+					<h4 className="text-white font-black text-4xl text-balance xl:text-5xl text-center min-[500px]:text-start">
 						Especialistas en Aditivos
 					</h4>
-					<span className="text-white/80">
+					<p className="text-white/80  text-center min-[500px]:text-start w-full">
 						para concreto, Morteros y Shotcrete.
-					</span>
+					</p>
 					<Link
 						href="/productos"
-						className="w-fit flex items-center text-white gap-2 bg-ecoandina-rojo px-8 py-1.5 rounded-[2px] border border-white/60  text-sm uppercase mt-4"
+						className="w-fit flex items-center text-white gap-2 bg-ecoandina-rojo px-8 py-1.5 rounded-[2px] border border-white/60  text-sm uppercase mt-4 max-[499px]:mx-auto"
 					>
 						Ver productos
 					</Link>
 				</div>
 
-				<div className="bg-ecoandina-rojo max-w-[400px] w-full absolute bottom-0 right-0 py-6 px-8">
+				<div className="bg-ecoandina-rojo max-w-[640px] min-[500px]:max-w-[400px] w-full absolute bottom-0 right-0 py-6 px-8">
 					<h3 className="text-xl xl:text-2xl font-black text-white mb-2">
 						Más de 100 proyectos desarrollados
 					</h3>

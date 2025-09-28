@@ -20,7 +20,13 @@ export const Banner: React.FC<BannerProps> = ({
 	titleClassName = 'text-5xl',
 }) => {
 	return (
-		<div className={cn('relative w-full overflow-hidden', height, className)}>
+		<div
+			className={cn(
+				'relative w-full overflow-hidden max-md:h-[30vh]',
+				height,
+				className
+			)}
+		>
 			{/* Imagen */}
 			<Image
 				src={image}
@@ -34,7 +40,7 @@ export const Banner: React.FC<BannerProps> = ({
 			{/* Texto */}
 			<h2
 				className={cn(
-					'absolute inset-0 flex items-center justify-center text-white font-black z-10',
+					'absolute inset-0 flex items-center justify-center text-white font-black z-10 max-md:text-4xl',
 					titleClassName
 				)}
 			>

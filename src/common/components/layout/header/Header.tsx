@@ -4,23 +4,27 @@ import logo from '@public/logo.webp';
 import Image from 'next/image';
 import { Mail, MapPin, Phone, Search } from 'lucide-react';
 import { NavLinks } from './NavLinks';
+import { MobileMenu } from './MenuMovil';
 
 const Header = () => {
 	return (
 		<header className="bg-thedooragency-negro sticky top-0 z-40 w-full overflow-hidden  border-white/30 bg-white">
-			<div className="w-full  flex items-center justify-end ">
-				<div className="flex items-center justify-start gap-4 pl-10 bg-ecoandina-rojo max-w-[700px] py-1.5 text-white text-xs w-full clip-diagonal -mr-1">
+			<div className="w-full  flex  items-center justify-end ">
+				<div className="flex flex-wrap lg:flex-row items-center max-lg:px-2 justify-center lg:justify-start gap-2.5 lg:gap-4 lg:pl-10 bg-ecoandina-rojo max-w-full  lg:max-w-[750px] py-1.5 text-white text-xs w-full clip-diagonal lg:-mr-1">
 					<div className="flex items-center gap-1.5">
 						<Phone className="w-3 h-3" />
-						<span>TELÉFONO: 123-456-7890</span>
+						{/* <span className="md:block hidden">TELÉFONO: </span> */}
+						<span>+51 972 161 054</span>
 					</div>
 					<div className="flex items-center gap-1.5">
 						<Mail className="w-3 h-3" />
-						<span>CORREO: info@ecoaudina.com</span>
+						{/* <span className="md:block hidden">CORREO:</span> */}
+						<span>servicioalcliente@ecoandina-peru.com</span>
 					</div>
 					<div className="flex items-center gap-1.5">
 						<MapPin className="w-3 h-3" />
-						<span>UBICACIÓN: Ciudad, País</span>
+						{/* <span className="md:block hidden">UBICACIÓN:</span> */}
+						<span>Cajamarquilla M. E LT.1 Lurigancho - Chosica </span>
 					</div>
 				</div>
 			</div>
@@ -38,9 +42,7 @@ const Header = () => {
 					<NavLinks />
 
 					{/* Search Icon */}
-					<button className="text-black hover:text-red-200 transition-colors">
-						<Search className="w-5 h-5" />
-					</button>
+					<MobileMenu />
 				</div>
 				{/* <NavLinks /> */}
 				{/* <MobileMenu /> */}

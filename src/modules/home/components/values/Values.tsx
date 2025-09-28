@@ -1,26 +1,29 @@
 import { Container } from '@/common/components/customize/Container';
 import { Award, Handshake, Target } from 'lucide-react';
+import Image from 'next/image';
 import React from 'react';
-
+import innova from '@public/home/bannerCarousel/Innovacion.png';
+import mano from '@public/home/bannerCarousel/mano.png';
+import medalla from '@public/home/bannerCarousel/medalla.png';
 const Values = () => {
 	const valores = [
 		{
-			icon: Target,
+			icon: innova,
 			titulo: 'Innovación Técnica',
 			descripcion:
-				'Apostamos por la mejora continua y la innovación constante para ofrecer en todos nuestros productos. Nuestros técnicos, marineros y diseñadores nos ayudan a realizar una selección, responsabilidad y confianza. Estos son los pilares que guían cada paso de nuestro trabajo.',
+				'Apostamos por la mejora continua y el uso de tecnologías avanzadas en todos nuestros productos. Nuestros aditivos, morteros y soluciones para shotcrete están formulados para responder a los más altos estándares técnicos de la industria.',
 		},
 		{
-			icon: Award,
+			icon: mano,
 			titulo: 'Compromiso con la Calidad',
 			descripcion:
-				'La excelencia, seguridad y durabilidad son fundamentales. No nos conformamos con lo mínimo, siempre buscamos la perfección en cada detalle. Utilizamos únicamente productos que cumplen los estándares más altos de calidad.',
+				'La resistencia, seguridad y durabilidad de una obra comienza en los materiales. Por eso garantizamos un control riguroso en cada lote y en cada entrega, asegurando productos que superan las expectativas de nuestros clientes.',
 		},
 		{
-			icon: Handshake,
+			icon: medalla,
 			titulo: 'Confianza Profesional',
 			descripcion:
-				'Somos una empresa orientada a la atención personalizada, soporte técnico especializado y entrega puntual. Nuestro compromiso es que la confianza se construye con responsabilidad y resultados.',
+				'Somos un aliado estratégico en cada proyecto. Brindamos atención personalizada, soporte técnico especializado y entregas puntuales, porque entendemos que la confianza se construye con responsabilidad y resultados concretos.',
 		},
 	];
 	return (
@@ -31,23 +34,27 @@ const Values = () => {
 						Nuestros valores
 					</h2>
 					<p className=" max-w-[956px] mx-auto leading-relaxed text-sm mb-4">
-						No solo ofrecemos soluciones para la construcción, sino que
+						No solo proveemos soluciones para la construcción, sino que
 						aportamos a la solidez y durabilidad de cada proyecto. Nuestra
-						experiencia se enfoca para construir, mantener y desarrollar una
-						mejor realidad con especialidad, responsabilidad y confianza. Estos
-						son los pilares que guían cada paso de nuestro trabajo.
+						experiencia en aditivos para concreto, morteros y shotcrete nos
+						exige trabajar con precisión, responsabilidad y confianza. Estos son
+						los pilares que guían cada paso de nuestro trabajo:
 					</p>
 					<div className="w-16 h-[5px] bg-ecoandina-rojo rounded-full mx-auto"></div>
 				</div>
 
-				<div className="grid md:grid-cols-3 gap-8">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-8">
 					{valores.map((valor, index) => (
 						<div
 							key={index}
 							className="text-center bg-white px-8 pb-8 rounded-[2px]"
 						>
-							<div className="w-20 h-20 bg-red-600 rounded-[2px] flex items-center justify-center mx-auto -mt-10 mb-6">
-								<valor.icon className="w-10 h-10 text-white" />
+							<div className="w-20 h-20 bg-red-600 rounded-[2px] flex items-center justify-center mx-auto -mt-10 mb-6 p-2">
+								<Image
+									src={valor.icon}
+									alt={valor.titulo}
+									className="w-full h-full object-contain"
+								/>{' '}
 							</div>
 							<h3 className=" font-bold mb-3">{valor.titulo}</h3>
 							<p className=" text-sm">{valor.descripcion}</p>

@@ -125,11 +125,22 @@
 	}
 }
 
-.clip-diagonal {
-	border-radius: 0 0 0 6px; /* redondeo abajo */
+/* .clip-diagonal {
+	border-radius: 0 0 0 6px;
 	transform: skewX(-10deg);
 }
 
 .clip-diagonal > * {
-	transform: skewX(10deg); /* corrige el contenido */
+	transform: skewX(10deg);
+} */
+
+@media (min-width: 1024px) {
+	.clip-diagonal {
+		border-radius: 0 0 0 6px; /* redondeo abajo */
+		transform: skewX(-10deg);
+	}
+
+	.clip-diagonal > * {
+		transform: skewX(10deg); /* corrige el contenido */
+	}
 }

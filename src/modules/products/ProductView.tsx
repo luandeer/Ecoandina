@@ -20,11 +20,14 @@ const ProductView = () => {
 		'Prefabricados',
 	];
 	return (
-		<Container size="full" className="bg-ecoandina-rojo ">
-			<Container className="grid grid-cols-2   py-0 ">
-				<div className="p-16 bg-white my-10">
+		<Container
+			size="full"
+			className="bg-ecoandina-rojo max-md:pb-8 max-md:pt-0 max-md:px-0"
+		>
+			<Container className="grid grid-cols-1 xl:grid-cols-2   py-0 ">
+				<div className="p-8 md:p-16 bg-white my-10">
 					<div className="space-y-2 mb-6">
-						<h2 className="text-3xl font-bold">
+						<h2 className="text-xl md:text-3xl font-bold">
 							REDUCTOR DE AGUA PLASTIFICANTES
 						</h2>
 						<div className="w-16 h-[5px] bg-ecoandina-rojo rounded-full"></div>
@@ -39,7 +42,7 @@ const ProductView = () => {
 					</p>
 					<div className="bg-[#232323] text-white overflow-hidden shadow-lg max-w-md">
 						{/* Main content */}
-						<div className="grid grid-cols-2 gap-8 p-6">
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
 							{/* Products column */}
 							<div>
 								<h3 className="font-semibold text-sm mb-3 text-white">

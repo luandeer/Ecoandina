@@ -6,7 +6,7 @@ import { Container } from '@/common/components/customize/Container';
 const NoticeView = () => {
 	return (
 		<>
-			<Container size="full" className="sticky top-[110.67px] py-0 ">
+			<Container size="full" className="sticky top-[110.67px] py-0 px-0">
 				<div className="w-full h-[10px] bg-red-600"></div>
 			</Container>
 			<Container>
