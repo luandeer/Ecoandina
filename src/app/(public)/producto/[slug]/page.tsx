@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import NoticeView from '@/modules/notices/NoticeView';
 import ProductView from '@/modules/products/ProductView';
+import { products } from '@/modules/products/data/products';
 
 type PageProps = {
 	params: Promise<{ slug: string }>; // params ahora es una promesa
@@ -31,10 +32,11 @@ export default async function page({ params }: PageProps) {
 	// await new Promise((resolve) => setTimeout(resolve, 2000));
 
 	const { slug } = await params;
+	const product = products.find((p) => p.slug === slug);
 
-	// if (!VALID_SLUGS.includes(slug)) {
-	//   notFound(); // 404 si no existe la categoría
-	// }
+	if (!product) {
+		notFound(); // 404 si no existe el producto
+	}
 
-	return <ProductView />;
+	return <ProductView product={product} />;
 }

@@ -4,6 +4,7 @@ import React from 'react';
 import foto from '@public/about/portada-about.png';
 import PreviewProduct from './components/PreviewProduct';
 import productImage from '@public/products/product.png';
+import { products } from './data/products';
 
 const ProductsView = () => {
 	return (
@@ -24,36 +25,14 @@ const ProductsView = () => {
 				<div className="w-16 h-[5px] bg-ecoandina-rojo rounded-full mx-auto"></div>
 			</Container>
 			<Container className="pt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1000px]">
-				<PreviewProduct
-					image={productImage}
-					title="Reductor de Agua Plastificantes"
-					href="/producto/reductor-de-agua-plastificantes"
-				/>{' '}
-				<PreviewProduct
-					image={productImage}
-					title="Reductor de Agua Plastificantes"
-					href="/producto/reductor-de-agua-plastificantes"
-				/>{' '}
-				<PreviewProduct
-					image={productImage}
-					title="Reductor de Agua Plastificantes"
-					href="/producto/reductor-de-agua-plastificantes"
-				/>{' '}
-				<PreviewProduct
-					image={productImage}
-					title="Reductor de Agua Plastificantes"
-					href="/producto/reductor-de-agua-plastificantes"
-				/>{' '}
-				<PreviewProduct
-					image={productImage}
-					title="Reductor de Agua Plastificantes"
-					href="/producto/reductor-de-agua-plastificantes"
-				/>{' '}
-				<PreviewProduct
-					image={productImage}
-					title="Reductor de Agua Plastificantes"
-					href="/producto/reductor-de-agua-plastificantes"
-				/>{' '}
+				{products.map((product) => (
+					<PreviewProduct
+						key={product.slug}
+						image={product.image}
+						title={product.title}
+						href={`/producto/${product.slug}`}
+					/>
+				))}
 			</Container>
 		</>
 	);
