@@ -3,7 +3,6 @@ import { Container } from '@/common/components/customize/Container';
 import React from 'react';
 import foto from '@public/about/portada-about.png';
 import PreviewProduct from './components/PreviewProduct';
-import productImage from '@public/products/product.png';
 import { products } from './data/products';
 
 const ProductsView = () => {

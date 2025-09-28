@@ -1,7 +1,6 @@
 import React from 'react';
 import mail from '@public/iconos/mailIcon.webp';
 import phone from '@public/iconos/callIco.webp';
-import time from '@public/iconos/HoraIcon.webp';
 import ubicacion from '@public/iconos/ubiIcon.webp';
 import Image from 'next/image';
 import { socialLinks } from './data/redes';

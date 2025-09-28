@@ -1,5 +1,4 @@
 import { Container } from '@/common/components/customize/Container';
-import { Award, Handshake, Target } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 import innova from '@public/home/bannerCarousel/Innovacion.png';

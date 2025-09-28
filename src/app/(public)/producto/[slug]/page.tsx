@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 
-import type { Metadata } from 'next';
-import NoticeView from '@/modules/notices/NoticeView';
+// import type { Metadata } from 'next';
+// import NoticeView from '@/modules/notices/NoticeView';
 import ProductView from '@/modules/products/ProductView';
 import { products } from '@/modules/products/data/products';
 

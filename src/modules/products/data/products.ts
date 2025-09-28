@@ -1,13 +1,14 @@
 // src/data/products.ts
 import productImage from '@public/products/product.png';
 import foto from '@public/products/foto.png';
+import { StaticImageData } from 'next/image';
 
 export interface Product {
 	slug: string; // para la ruta dinámica
 	title: string;
 	description: string;
-	image: any;
-	banner?: any;
+	image: StaticImageData;
+	banner?: StaticImageData;
 	products?: string[];
 	uses?: string[];
 }

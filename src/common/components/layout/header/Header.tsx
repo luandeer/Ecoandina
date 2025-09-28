@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import logo from '@public/logo.webp';
 import Image from 'next/image';
-import { Mail, MapPin, Phone, Search } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import { NavLinks } from './NavLinks';
 import { MobileMenu } from './MenuMovil';
 
