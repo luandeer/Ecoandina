@@ -4,30 +4,35 @@ import { notFound } from 'next/navigation';
 // import NoticeView from '@/modules/notices/NoticeView';
 import ProductView from '@/modules/products/ProductView';
 import { products } from '@/modules/products/data/products';
+import { Metadata } from 'next';
+import generateSeoMetadata from '@/lib/generateSeoMetadata';
 
 type PageProps = {
 	params: Promise<{ slug: string }>; // params ahora es una promesa
 };
 
-// export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-//   const { slug } = await params;
+export async function generateMetadata({
+	params,
+}: PageProps): Promise<Metadata> {
+	const { slug } = await params;
+	const product = products.find((p) => p.slug === slug);
 
-//   // Filtra proyectos por slug
+	if (!product) {
+		return generateSeoMetadata({
+			title: 'Producto no encontrado | Ecoandina',
+			description: 'Este producto no está disponible en el catálogo.',
+			canonicalPath: 'productos',
+		});
+	}
 
-//   // Metadata básica
-//   const title = `Trabajos de ${slug.replace('-', ' ')}`;
-//   const description =
-//     filteredProjects.length > 0
-//       ? `Explora ${filteredProjects.length} proyectos en la categoría ${slug.replace('-', ' ')}.`
-//       : `Actualmente no hay proyectos en la categoría ${slug.replace('-', ' ')}.`;
-
-//   return {
-//     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
-//     title,
-//     description,
-//   };
-// }
-
+	return generateSeoMetadata({
+		title: `${product.title}`,
+		description: product.description,
+		type: 'article',
+		image: product.image.src, // og:image
+		canonicalPath: `producto/${slug}`,
+	});
+}
 export default async function page({ params }: PageProps) {
 	// await new Promise((resolve) => setTimeout(resolve, 2000));
 

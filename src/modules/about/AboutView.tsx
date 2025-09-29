@@ -80,16 +80,19 @@ export const AboutView = () => {
 								/>
 
 								<div className="space-y-2">
-									<h2 className="text-3xl font-bold">Misión</h2>
+									<h2 className="text-3xl font-bold">Visión</h2>
 									<div className="w-16 h-[5px] bg-ecoandina-rojo rounded-full"></div>
 								</div>
 							</div>
 
 							<p className="text-balance">
-								Ofrecer soluciones a través de la química el concreto a nuestros
-								clientes con la mejor tecnología, calidad, construyendo
-								relaciones de largo plazo y a la vez estar a la vanguardia del
-								cuidado del medio ambiente.
+								Ser la primera empresa nacional de fabricación y
+								comercialización de aditivos de mejor calidad en el mercado
+								nacional e internacional, respetando los estándares de calidad,
+								ambientales, capital humano y ser reconocido por nuestros
+								clientes como una empresa modelo de gestión. Teniendo una
+								política de gestión empresarial transparente y apoyar el
+								desarrollo sostenible del país.
 							</p>
 						</div>
 					</div>

@@ -21,7 +21,7 @@ const Header = () => {
 						{/* <span className="md:block hidden">CORREO:</span> */}
 						<span>servicioalcliente@ecoandina-peru.com</span>
 					</div>
-					<div className="flex items-center gap-1.5">
+					<div className="hidden md:flex items-center gap-1.5">
 						<MapPin className="w-3 h-3" />
 						{/* <span className="md:block hidden">UBICACIÓN:</span> */}
 						<span>Cajamarquilla M. E LT.1 Lurigancho - Chosica </span>

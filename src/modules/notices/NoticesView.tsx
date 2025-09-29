@@ -2,8 +2,8 @@ import Banner from '@/common/components/customize/Banner';
 import { Container } from '@/common/components/customize/Container';
 import React from 'react';
 import foto from '@public/about/portada-about.png';
-import blog from '@public/notices/blog.png';
 import NoticeCard from './components/PreviewNotice';
+import { notices } from './data/notices';
 export const NoticesView = () => {
 	return (
 		<>
@@ -25,33 +25,18 @@ export const NoticesView = () => {
 			</Container>
 			<Container className="pt-4 ">
 				<div className="space-y-10">
-					<NoticeCard
-						image={blog}
-						alt="Camión mezclador de concreto en sitio de construcción"
-						date="Lima, julio de 2019"
-						title="Econandina impulsa la innovación en aditivos para concreto con nueva fórmula ecoeficiente"
-						description="Econandina, empresa peruana especializada en la fabricación y comercialización de aditivos para concreto y morteros."
-						ctaLabel="LEER COMPLETO"
-						href="/noticias/ecoandina-innovacion"
-					/>
-					<NoticeCard
-						image={blog}
-						alt="Camión mezclador de concreto en sitio de construcción"
-						date="Lima, julio de 2019"
-						title="Econandina impulsa la innovación en aditivos para concreto con nueva fórmula ecoeficiente"
-						description="Econandina, empresa peruana especializada en la fabricación y comercialización de aditivos para concreto y morteros."
-						ctaLabel="LEER COMPLETO"
-						href="/noticias/ecoandina-innovacion"
-					/>
-					<NoticeCard
-						image={blog}
-						alt="Camión mezclador de concreto en sitio de construcción"
-						date="Lima, julio de 2019"
-						title="Econandina impulsa la innovación en aditivos para concreto con nueva fórmula ecoeficiente"
-						description="Econandina, empresa peruana especializada en la fabricación y comercialización de aditivos para concreto y morteros."
-						ctaLabel="LEER COMPLETO"
-						href="/noticias/ecoandina-innovacion"
-					/>
+					{notices.map((notice) => (
+						<NoticeCard
+							key={notice.slug}
+							image={notice.image}
+							alt={notice.alt}
+							date={notice.date}
+							title={notice.title}
+							description={notice.description}
+							ctaLabel="LEER COMPLETO"
+							href={`/noticias/${notice.slug}`}
+						/>
+					))}
 				</div>
 			</Container>
 		</>

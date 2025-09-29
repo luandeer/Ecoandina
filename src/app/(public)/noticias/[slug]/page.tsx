@@ -1,40 +1,44 @@
+import { DEFAULT_SEO_NOTICIES } from '@/common/constants/seo-config';
+import generateSeoMetadata from '@/lib/generateSeoMetadata';
+import { notices } from '@/modules/notices/data/notices';
 import NoticeView from '@/modules/notices/NoticeView';
+import { Metadata } from 'next';
 
 type PageProps = {
 	params: Promise<{ slug: string }>; // params ahora es una promesa
 };
 
-// export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-//   const { slug } = await params;
+export async function generateMetadata({
+	params,
+}: PageProps): Promise<Metadata> {
+	const { slug } = await params;
+	const notice = notices.find((n) => n.slug === slug);
 
-//   // Filtra proyectos por slug
+	if (!notice) {
+		// SEO por defecto para noticias
+		return generateSeoMetadata(DEFAULT_SEO_NOTICIES);
+	}
 
-//   // Metadata básica
-//   const title = `Trabajos de ${slug.replace('-', ' ')}`;
-//   const description =
-//     filteredProjects.length > 0
-//       ? `Explora ${filteredProjects.length} proyectos en la categoría ${slug.replace('-', ' ')}.`
-//       : `Actualmente no hay proyectos en la categoría ${slug.replace('-', ' ')}.`;
-
-//   return {
-//     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
-//     title,
-//     description,
-//   };
-// }
+	return generateSeoMetadata({
+		title: notice.title,
+		description: notice.description,
+		image: notice.image.src, // og:image (usa .src de StaticImageData)
+		canonicalPath: `noticias/${notice.slug}`,
+		type: 'article',
+	});
+}
 
 export default async function page({ params }: PageProps) {
 	// await new Promise((resolve) => setTimeout(resolve, 2000));
 
 	const { slug } = await params;
-	console.log(slug);
-	// if (!VALID_SLUGS.includes(slug)) {
-	//   notFound(); // 404 si no existe la categoría
-	// }
+	const notice = notices.find((n) => n.slug === slug);
+
+	if (!notice) return <p>No encontramos esta noticia.</p>;
 
 	return (
 		<div className="relative w-full h-full">
-			<NoticeView />
+			<NoticeView notice={notice} />
 		</div>
 	);
 }

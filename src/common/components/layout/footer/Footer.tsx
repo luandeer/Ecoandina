@@ -5,71 +5,64 @@ import { socialLinks } from '@/modules/contact/data/redes';
 import mail from '@public/iconos/mailIcon.webp';
 import phone from '@public/iconos/callIco.webp';
 import ubicacion from '@public/iconos/ubiIcon.webp';
+import { ChevronRight } from 'lucide-react';
 export default function Footer() {
 	return (
 		<footer className="bg-black text-white pt-16 px-6 2xl:px-0">
 			<div className="max-w-[1440px] mx-auto">
 				<div className="grid grid-cols-1 md:grid-cols-[1.5fr_0.5fr] lg:grid-cols-2 gap-8">
 					{/* Primera columna */}
-					<div className="flex items-start gap-10 lg:gap-20 justify-center   text-sm">
+					<div className="flex items-start gap-10 lg:gap-20 justify-center text-sm order-2 md:order-1">
 						<ul className="space-y-3 text-center md:text-start">
 							<li>
 								<Link
 									href="/"
-									className="text-gray-300 hover:text-white transition-colors"
+									className="text-gray-300 hover:text-white transition-colors flex items-center"
 								>
+									<ChevronRight className="text-white size-3.5 mr-0.5" />
 									Inicio
 								</Link>
 							</li>
 							<li>
 								<Link
 									href="/nosotros"
-									className="text-gray-300 hover:text-white transition-colors"
+									className="text-gray-300 hover:text-white transition-colors flex items-center"
 								>
+									{' '}
+									<ChevronRight className="text-white size-3.5 mr-0.5" />
 									Nosotros
 								</Link>
 							</li>
 							<li>
 								<Link
 									href="/productos"
-									className="text-gray-300 hover:text-white transition-colors"
+									className="text-gray-300 hover:text-white transition-colors flex items-center"
 								>
+									{' '}
+									<ChevronRight className="text-white size-3.5 mr-0.5" />
 									Productos
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="/noticias"
-									className="text-gray-300 hover:text-white transition-colors md:hidden block"
-								>
-									Noticias
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="/contacto"
-									className="text-gray-300 hover:text-white transition-colors md:hidden block"
-								>
-									Contacto
 								</Link>
 							</li>
 						</ul>
 
 						{/* Segunda columna */}
-						<ul className="space-y-3 text-center md:text-start hidden md:block">
+						<ul className="space-y-3 text-center md:text-start block">
 							<li>
 								<Link
 									href="/noticias"
-									className="text-gray-300 hover:text-white transition-colors"
+									className="text-gray-300 hover:text-white transition-colors flex items-center"
 								>
+									<ChevronRight className="text-white size-3.5 mr-0.5" />
 									Noticias
 								</Link>
 							</li>
 							<li>
 								<Link
 									href="/contacto"
-									className="text-gray-300 hover:text-white transition-colors"
+									className="text-gray-300 hover:text-white transition-colors flex items-center"
 								>
+									{' '}
+									<ChevronRight className="text-white size-3.5 mr-0.5" />
 									Contacto
 								</Link>
 							</li>
@@ -116,7 +109,7 @@ export default function Footer() {
 					</div>
 
 					{/* Cuarta columna - Logo y redes sociales */}
-					<div className="gap-4 w-full flex flex-col items-center justify-center">
+					<div className="gap-4 w-full flex flex-col items-center justify-center order-1 md:order-2">
 						<Link href="/" className="max-w-[100px] w-full h-min pb-2">
 							<Image
 								src={logo}
@@ -146,7 +139,7 @@ export default function Footer() {
 
 				{/* Copyright */}
 				<div className="mt-12 py-8 border-t border-gray-800 text-center">
-					<p className="text-gray-400 text-sm">©2025 Thedooragency</p>
+					<p className="text-gray-300 text-sm">©2025 Thedooragency</p>
 				</div>
 			</div>
 		</footer>
